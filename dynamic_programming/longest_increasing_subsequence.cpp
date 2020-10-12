@@ -1,6 +1,5 @@
 // Program to calculate length of longest increasing subsequence in an array
 #include <bits/stdc++.h>
-using namespace std;
 int LIS(int a[], int n) {
     int lis[n];
     for (int i = 0; i < n; ++i) {
@@ -14,19 +13,19 @@ int LIS(int a[], int n) {
     }
     int res = 0;
     for (int i = 0; i < n; ++i) {
-        res = max(res, lis[i]);
+        res = std::max(res, lis[i]);
     }
     return res;
 }
 int main(int argc, char const *argv[]) {
     int n;
-    cout << "Enter size of array: ";
-    cin >> n;
+    std::cout << "Enter size of array: ";
+    std::cin >> n;
     int a[n];
-    cout << "Enter array elements: ";
+    std::cout << "Enter array elements: ";
     for (int i = 0; i < n; ++i) {
-        cin >> a[i];
+        std::cin >> a[i];
     }
-    cout << LIS(a, n) << endl;
+    std::cout << LIS(a, n) << std::endl;
     return 0;
 }
