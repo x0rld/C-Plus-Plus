@@ -4,7 +4,7 @@
 
 #include <climits>
 #include <iostream>
-using namespace std;
+
 
 int eggDrop(int n, int k) {
     int eggFloor[n + 1][k + 1];
@@ -26,7 +26,7 @@ int eggDrop(int n, int k) {
             for (int x = 1; x <= j; x++) {
                 // 1+max(eggBreak[one less egg, lower floors],
                 //       eggDoesntBreak[same # of eggs, upper floors]);
-                result = 1 + max(eggFloor[i - 1][x - 1], eggFloor[i][j - x]);
+                result = 1 + std::max(eggFloor[i - 1][x - 1], eggFloor[i][j - x]);
                 if (result < eggFloor[i][j])
                     eggFloor[i][j] = result;
             }
@@ -38,8 +38,8 @@ int eggDrop(int n, int k) {
 
 int main() {
     int n, k;
-    cout << "Enter number of eggs and floors: ";
-    cin >> n >> k;
-    cout << "Minimum number of trials in worst case: " << eggDrop(n, k) << endl;
+    std::cout << "Enter number of eggs and floors: ";
+    std::cin >> n >> k;
+    std::cout << "Minimum number of trials in worst case: " << eggDrop(n, k) << std::endl;
     return 0;
 }
