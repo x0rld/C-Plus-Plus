@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 struct node {
     int val;
@@ -11,7 +10,7 @@ node *start;
 void insert(int x) {
     node *t = start;
 
-    if (start != NULL) {
+    if (start != nullptr) {
         while (t->next != start) {
             t = t->next;
         }
@@ -43,21 +42,21 @@ void search(int x) {
     int found = 0;
     while (t->next != start) {
         if (t->val == x) {
-            cout << "\nFound";
+            std::cout << "\nFound";
             found = 1;
             break;
         }
         t = t->next;
     }
     if (found == 0) {
-        cout << "\nNot Found";
+        std::cout << "\nNot Found";
     }
 }
 
 void show() {
     node *t = start;
     do {
-        cout << t->val << "\t";
+        std::cout << t->val << "\t";
         t = t->next;
     } while (t != start);
 }
@@ -65,26 +64,26 @@ void show() {
 int main() {
     int choice, x;
     do {
-        cout << "\n1. Insert";
-        cout << "\n2. Delete";
-        cout << "\n3. Search";
-        cout << "\n4. Print";
-        cout << "\n\nEnter you choice : ";
-        cin >> choice;
+        std::cout << "\n1. Insert";
+        std::cout << "\n2. Delete";
+        std::cout << "\n3. Search";
+        std::cout << "\n4. Print";
+        std::cout << "\n\nEnter you choice : ";
+        std::cin >> choice;
         switch (choice) {
         case 1:
-            cout << "\nEnter the element to be inserted : ";
-            cin >> x;
+            std::cout << "\nEnter the element to be inserted : ";
+            std::cin >> x;
             insert(x);
             break;
         case 2:
-            cout << "\nEnter the element to be removed : ";
-            cin >> x;
+            std::cout << "\nEnter the element to be removed : ";
+            std::cin >> x;
             remove(x);
             break;
         case 3:
-            cout << "\nEnter the element to be searched : ";
-            cin >> x;
+            std::cout << "\nEnter the element to be searched : ";
+            std::cin >> x;
             search(x);
             break;
         case 4:
